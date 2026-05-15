@@ -1,0 +1,27 @@
+Similiarity between TCS and Infosys : 0.9975 ← expect HIGH (same category)
+Similiarity between Infosys and Unknown vendor : 0.3976 ← expect LOW (different category)
+Similiarity between TCS and Unknown vendor : 0.3333 ← expect LOW (different category)
+
+--- Structured Output (your first JSON artifact) ---
+{
+  "concept": "cosine similarity",
+  "business_case": "Detect semantically anomalous Vs. historical corpus.",
+  "treshold_flag": 0.75,
+  "test_case": [
+    {
+      "pair": "Tata vs Infosys",
+      "score": 0.9975,
+      "flag": false
+    },
+    {
+      "pair": "Infosy vs Unknown",
+      "score": 0.3976,
+      "flag": true
+    },
+    {
+      "pair": "TCS vs Unknown",
+      "score": 0.3333,
+      "flag": true
+    }
+  ]
+}

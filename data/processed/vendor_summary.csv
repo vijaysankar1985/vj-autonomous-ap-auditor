@@ -1,0 +1,11 @@
+vendor_name,total_invoices,total_amount_inr,duplicate_count,duplicate_rate_%,pending_count,approved_count
+HCL Technologies,12,3923873.4699999997,0,0.0,4,4
+Oracle India,14,3662487.1100000003,1,7.14,2,6
+Accenture Solutions,13,3286388.4200000004,1,7.69,5,1
+Cognizant,9,2950090.0999999996,1,11.11,2,4
+Infosys Ltd,10,2947869.95,1,10.0,2,4
+Tata Consultancy Services,11,2805369.43,3,27.27,3,3
+Wipro Technologies,10,2421970.6,0,0.0,7,1
+IBM India,8,2396037.57,0,0.0,3,4
+Capgemini India,7,1575028.7599999998,0,0.0,1,5
+Tech Mahindra,6,1345883.75,0,0.0,0,3

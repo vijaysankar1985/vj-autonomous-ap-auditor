@@ -1,0 +1,101 @@
+invoice_id,vendor_name,invoice_date,due_date,amount_inr,category,status,po_number,flagged
+INV-1000,Capgemini India,2026-05-08,2026-06-12,210654.19,IT Services,Approved,PO-9184,False
+INV-1001,IBM India,2025-12-12,2026-07-04,219751.8,Software License,Pending,PO-7622,False
+INV-1002,Oracle India,2026-03-21,2026-06-26,484875.91,Maintenance,Pending,PO-6818,False
+INV-1003,Wipro Technologies,2026-02-01,2026-05-25,156073.22,Cloud Services,Pending,PO-5736,False
+INV-1004,Wipro Technologies,2026-04-17,2026-06-07,169330.1,Hardware,Pending,PO-9043,False
+INV-1005,Wipro Technologies,2026-03-16,2026-07-06,101084.99,Hardware,Pending,PO-6405,False
+INV-1006,HCL Technologies,2026-01-21,2026-06-10,469507.23,Consulting,Approved,PO-5110,False
+INV-1007,Wipro Technologies,2025-12-07,2026-06-30,372540.48,Maintenance,Pending,PO-8209,False
+INV-1008,IBM India,2026-05-01,2026-05-21,19484.07,Professional Services,Approved,PO-6792,False
+INV-1009,IBM India,2026-02-13,2026-06-18,378311.05,Professional Services,Pending,PO-8611,False
+INV-1010,Oracle India,2026-04-25,2026-06-26,339316.39,IT Services,Duplicate,PO-7191,True
+INV-1011,HCL Technologies,2026-04-15,2026-06-08,419522.66,Software License,Pending,PO-7486,False
+INV-1012,IBM India,2025-12-10,2026-05-28,490454.94,Consulting,Approved,PO-6524,False
+INV-1013,Oracle India,2026-01-15,2026-06-20,471118.91,Maintenance,Rejected,PO-8619,False
+INV-1014,Tech Mahindra,2026-02-22,2026-06-03,101567.04,IT Services,Approved,PO-9748,False
+INV-1015,Cognizant,2025-12-09,2026-07-09,409846.58,IT Services,Duplicate,PO-7029,True
+INV-1016,Oracle India,2025-12-16,2026-06-02,137111.84,Consulting,Rejected,PO-5422,False
+INV-1017,Infosys Ltd,2026-01-12,2026-06-17,465975.99,Software License,Duplicate,PO-6867,True
+INV-1018,Capgemini India,2025-12-25,2026-07-03,455841.68,Professional Services,Rejected,PO-9825,False
+INV-1019,Oracle India,2026-03-17,2026-05-17,441928.64,Consulting,Approved,PO-8971,False
+INV-1020,Infosys Ltd,2026-02-16,2026-05-31,277263.29,Maintenance,Pending,PO-6768,False
+INV-1021,Wipro Technologies,2026-03-09,2026-05-27,257813.64,Maintenance,Pending,PO-9708,False
+INV-1022,Cognizant,2026-03-19,2026-06-04,197745.82,Maintenance,Approved,PO-9412,False
+INV-1023,Tata Consultancy Services,2026-05-03,2026-07-03,151828.79,Hardware,Rejected,PO-7369,False
+INV-1024,Wipro Technologies,2026-04-28,2026-07-06,137348.91,Cloud Services,Rejected,PO-9055,False
+INV-1025,Cognizant,2026-02-19,2026-06-08,473521.39,Maintenance,Approved,PO-8936,False
+INV-1026,Tech Mahindra,2026-02-12,2026-05-23,48631.9,Professional Services,Rejected,PO-7604,False
+INV-1027,Accenture Solutions,2026-02-27,2026-05-16,168061.67,Software License,Rejected,PO-6161,False
+INV-1028,Infosys Ltd,2026-05-12,2026-06-30,459281.78,Professional Services,Approved,PO-8107,False
+INV-1029,HCL Technologies,2025-12-12,2026-06-01,326700.8,Maintenance,Pending,PO-6840,False
+INV-1030,HCL Technologies,2026-03-18,2026-05-25,464384.12,IT Services,Rejected,PO-6859,False
+INV-1031,Tata Consultancy Services,2025-12-10,2026-06-06,400742.45,Hardware,Duplicate,PO-8266,True
+INV-1032,Accenture Solutions,2026-02-18,2026-06-03,158385.09,Software License,Duplicate,PO-6706,True
+INV-1033,Tech Mahindra,2026-05-12,2026-06-27,160891.01,Software License,Approved,PO-7043,False
+INV-1034,HCL Technologies,2026-02-13,2026-07-12,325576.51,Cloud Services,Rejected,PO-8218,False
+INV-1035,Accenture Solutions,2026-05-12,2026-06-11,494467.08,Maintenance,Rejected,PO-9439,False
+INV-1036,Infosys Ltd,2026-04-20,2026-06-19,489280.04,Consulting,Rejected,PO-5112,False
+INV-1037,Tata Consultancy Services,2025-11-26,2026-06-19,97491.44,Maintenance,Pending,PO-7938,False
+INV-1038,Cognizant,2026-03-23,2026-07-08,280492.81,IT Services,Rejected,PO-7605,False
+INV-1039,Oracle India,2026-01-01,2026-06-30,213869.58,Cloud Services,Approved,PO-7799,False
+INV-1040,HCL Technologies,2026-04-16,2026-06-19,488496.72,IT Services,Rejected,PO-7942,False
+INV-1041,Capgemini India,2026-03-30,2026-07-15,216023.84,Hardware,Approved,PO-7814,False
+INV-1042,Tech Mahindra,2026-05-07,2026-05-17,248639.98,IT Services,Rejected,PO-9767,False
+INV-1043,Cognizant,2025-12-28,2026-07-08,65293.56,IT Services,Rejected,PO-9990,False
+INV-1044,HCL Technologies,2026-05-08,2026-06-19,160108.94,Hardware,Pending,PO-5773,False
+INV-1045,Wipro Technologies,2025-11-25,2026-06-13,428643.36,Maintenance,Pending,PO-7595,False
+INV-1046,Cognizant,2026-03-15,2026-06-04,287738.96,Hardware,Approved,PO-7443,False
+INV-1047,Oracle India,2026-03-17,2026-05-16,469240.75,Cloud Services,Rejected,PO-9107,False
+INV-1048,Capgemini India,2026-04-30,2026-05-26,225742.44,Cloud Services,Pending,PO-8728,False
+INV-1049,Infosys Ltd,2026-03-03,2026-06-05,275694.14,Hardware,Rejected,PO-6435,False
+INV-1050,Oracle India,2026-05-10,2026-07-14,204571.36,Hardware,Approved,PO-6510,False
+INV-1051,Tech Mahindra,2026-01-16,2026-05-18,292523.78,Maintenance,Rejected,PO-5454,False
+INV-1052,Capgemini India,2026-01-02,2026-06-29,222733.22,Software License,Approved,PO-5287,False
+INV-1053,Oracle India,2025-12-28,2026-07-13,92305.05,Maintenance,Pending,PO-8016,False
+INV-1054,Oracle India,2026-02-13,2026-06-14,57523.06,Cloud Services,Rejected,PO-9866,False
+INV-1055,Oracle India,2026-02-06,2026-07-06,114513.91,Professional Services,Approved,PO-9441,False
+INV-1056,Wipro Technologies,2025-12-16,2026-06-20,198850.1,Cloud Services,Approved,PO-8904,False
+INV-1057,HCL Technologies,2026-03-30,2026-06-05,270381.44,Maintenance,Approved,PO-6183,False
+INV-1058,IBM India,2025-11-19,2026-07-07,235333.97,Professional Services,Approved,PO-8831,False
+INV-1059,Accenture Solutions,2026-01-27,2026-07-07,464955.27,Software License,Approved,PO-5212,False
+INV-1060,Infosys Ltd,2025-12-06,2026-07-14,398866.42,Consulting,Approved,PO-9845,False
+INV-1061,IBM India,2025-12-31,2026-06-07,479420.16,Consulting,Rejected,PO-5235,False
+INV-1062,Tata Consultancy Services,2026-02-16,2026-05-21,248201.62,Software License,Duplicate,PO-7098,True
+INV-1063,Accenture Solutions,2026-01-13,2026-05-29,308991.96,Professional Services,Rejected,PO-8048,False
+INV-1064,Accenture Solutions,2026-03-26,2026-07-08,295918.63,Software License,Pending,PO-7180,False
+INV-1065,Wipro Technologies,2026-02-08,2026-07-08,107293.64,Consulting,Pending,PO-9036,False
+INV-1066,Oracle India,2026-05-15,2026-05-25,197343.98,Professional Services,Approved,PO-6806,False
+INV-1067,Capgemini India,2026-02-25,2026-05-24,74254.41,Software License,Approved,PO-8856,False
+INV-1068,Infosys Ltd,2026-03-18,2026-06-26,120286.35,Cloud Services,Pending,PO-7452,False
+INV-1069,IBM India,2026-03-11,2026-06-18,128873.22,Consulting,Approved,PO-5603,False
+INV-1070,Infosys Ltd,2025-12-01,2026-06-22,180602.4,Software License,Approved,PO-9844,False
+INV-1071,Infosys Ltd,2026-02-03,2026-06-16,140366.77,Cloud Services,Rejected,PO-8667,False
+INV-1072,Tata Consultancy Services,2025-11-20,2026-05-23,116306.35,Consulting,Pending,PO-6036,False
+INV-1073,Accenture Solutions,2026-02-21,2026-05-26,141660.08,Consulting,Pending,PO-8957,False
+INV-1074,Tata Consultancy Services,2026-05-08,2026-05-24,376827.32,Software License,Approved,PO-5809,False
+INV-1075,Accenture Solutions,2026-05-01,2026-05-20,67340.04,Consulting,Rejected,PO-5206,False
+INV-1076,HCL Technologies,2025-12-09,2026-06-26,389700.18,Cloud Services,Rejected,PO-6963,False
+INV-1077,Capgemini India,2026-03-02,2026-05-26,169778.98,Professional Services,Approved,PO-8374,False
+INV-1078,Wipro Technologies,2025-11-24,2026-07-01,492992.16,Cloud Services,Rejected,PO-7104,False
+INV-1079,Tata Consultancy Services,2026-03-17,2026-05-26,293614.93,IT Services,Pending,PO-6010,False
+INV-1080,Accenture Solutions,2025-11-24,2026-06-09,113499.37,Software License,Pending,PO-9542,False
+INV-1081,Oracle India,2025-12-16,2026-06-02,395645.78,Maintenance,Approved,PO-6872,False
+INV-1082,HCL Technologies,2026-03-25,2026-05-29,17357.5,Professional Services,Pending,PO-8470,False
+INV-1083,Cognizant,2026-03-02,2026-05-18,296589.92,Professional Services,Approved,PO-6052,False
+INV-1084,IBM India,2026-02-04,2026-05-24,444408.36,Hardware,Pending,PO-5795,False
+INV-1085,Accenture Solutions,2026-03-22,2026-05-24,235064.21,Cloud Services,Rejected,PO-7954,False
+INV-1086,Tata Consultancy Services,2026-01-10,2026-05-21,437436.01,Cloud Services,Approved,PO-9363,False
+INV-1087,Accenture Solutions,2025-11-21,2026-05-25,436476.16,Consulting,Rejected,PO-8134,False
+INV-1088,Accenture Solutions,2025-12-31,2026-06-26,313644.3,IT Services,Pending,PO-6472,False
+INV-1089,Tata Consultancy Services,2025-11-25,2026-07-12,305860.96,Professional Services,Approved,PO-9848,False
+INV-1090,Infosys Ltd,2026-05-02,2026-07-01,140252.77,IT Services,Approved,PO-6306,False
+INV-1091,Oracle India,2025-11-21,2026-06-16,43121.95,Maintenance,Rejected,PO-9261,False
+INV-1092,HCL Technologies,2026-01-12,2026-07-05,161136.84,Maintenance,Approved,PO-8820,False
+INV-1093,Tata Consultancy Services,2026-02-02,2026-06-05,216473.89,Hardware,Duplicate,PO-7153,True
+INV-1094,Accenture Solutions,2026-02-12,2026-07-07,87924.56,Consulting,Pending,PO-7869,False
+INV-1095,HCL Technologies,2026-04-01,2026-05-21,431000.53,Cloud Services,Approved,PO-9941,False
+INV-1096,Cognizant,2026-02-07,2026-05-20,458215.84,IT Services,Pending,PO-7728,False
+INV-1097,Cognizant,2026-05-04,2026-07-02,480645.22,Software License,Pending,PO-9073,False
+INV-1098,Tata Consultancy Services,2026-01-05,2026-06-25,160585.67,Software License,Rejected,PO-8101,False
+INV-1099,Tech Mahindra,2026-01-28,2026-05-20,493630.04,Consulting,Approved,PO-6091,False

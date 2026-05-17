@@ -1,0 +1,135 @@
+# SQL Lite and Windows Functions
+import sqlite3
+
+# Checking the invoice column names so that we can use them in the SQL query.
+import csv
+
+# with open("data/raw/invoices.csv", "r") as f:
+#     print(next(csv.reader(f))) #=>This line prints the column headers
+
+# ['invoice_id', 'vendor_name', 'invoice_date', 'due_date', 'amount_inr', 'category', 'status', 'po_number', 'flagged']
+
+from datetime import datetime
+
+# STEP 1: Loading CSV into in-memory SQLite 
+conn = sqlite3.connect(":memory:")
+cursor = conn.cursor()
+
+cursor.execute("""CREATE TABLE invoices (invoice_id TEXT, 
+                                      vendor_name TEXT, 
+                                      invoice_date TEXT, 
+                                      due_date TEXT, 
+                                      amount_inr REAL, 
+                                      category TEXT, 
+                                      status TEXT, 
+                                      po_number TEXT, 
+                                      flagged TEXT)
+                """)
+with open("data/raw/invoices.csv", newline="", encoding="utf-8") as f:
+    reader = csv.DictReader(f)
+    for row in reader:
+        cursor.execute("""INSERT INTO invoices(invoice_id, vendor_name, invoice_date, due_date, amount_inr, category, status, po_number, flagged)
+                       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)""", 
+                       (row["invoice_id"], row["vendor_name"], row["invoice_date"], row["due_date"], float(row["amount_inr"]), row["category"], row["status"], row["po_number"], row["flagged"]))
+conn.commit()
+
+
+# TEMPORARY — inject one known suspicious pair to verify flag logic works
+# cursor.execute("""
+#     INSERT INTO invoices (invoice_id, vendor_name, amount_inr, invoice_date)
+#     VALUES ('TEST-001', 'Test Vendor', 500.00, '2024-03-01')
+# """)
+# cursor.execute("""
+#     INSERT INTO invoices (invoice_id, vendor_name, amount_inr, invoice_date)
+#     VALUES ('TEST-002', 'Test Vendor', 500.00, '2024-03-04')
+# """)
+# conn.commit()
+
+# STEP 2:  QUERY 1: Rank invoices by amount within each vendor
+print("=== QUERY 1: Invoice rank by amount per vendor ===")
+q1 =""" 
+SELECT vendor_name, invoice_id, amount_inr,
+RANK() OVER (PARTITION BY vendor_name ORDER BY amount_inr DESC) AS amount_rank
+FROM invoices
+ORDER BY vendor_name, amount_rank
+LIMIT 20;"""
+
+rows = cursor.execute(q1).fetchall()
+print(f"{'Invoice ID':<15} {'Vendor':<25} {'Amount':>10} {'Rank':>6}")
+print("-" * 50)
+for row in rows:
+    print(f"{row[1]:<15} {row[0]:<25} {row[2]:>10.2f} {row[3]:>6}")
+print("\n")
+
+
+# STEP 3:  QUERY 2: Deviation from vendor average
+print("\n=== QUERY 2: Invoices above vendor average (audit flags) ===")
+q2 = """
+SELECT *
+FROM (
+    SELECT
+        invoice_id,
+        vendor_name,
+        amount_inr,
+        ROUND(AVG(amount_inr) OVER (PARTITION BY vendor_name), 2) AS vendor_avg,
+        ROUND(amount_inr - AVG(amount_inr) OVER (PARTITION BY vendor_name), 2) AS deviation
+    FROM invoices
+)
+WHERE deviation > 0
+ORDER BY deviation DESC
+LIMIT 10
+"""
+rows=cursor.execute(q2).fetchall()
+
+print(f"{'Invoice':<15} {'Vendor':<25} {'Amount':>10} {'Avg':>10} {'Deviation':>10}")
+print("-" * 75)
+for r in rows:
+    print(f"{r[0]:<15} {r[1]:<25} {r[2]:>10.2f} {r[3]:>10.2f} {r[4]:>10.2f}")
+
+
+# STEP 4: QUERY 3: Days gap between consecutive invoices per vendor
+print("\n=== QUERY 3: Suspicious short gaps between invoices (< 7 days) ===")
+
+q3 = """
+SELECT
+      invoice_id,
+      vendor_name,
+      invoice_date,
+      LAG(invoice_date) OVER(PARTITION BY vendor_name ORDER BY invoice_date) AS prev_date
+FROM 
+    invoices
+ORDER BY vendor_name, invoice_date
+"""
+
+rows = cursor.execute(q3).fetchall()
+
+flags=[]
+for r in rows:
+    if r[3] is None: #i.e., first invoice for this vendor, no previous invoice
+        continue
+    # current =  datetime.timestamp(r[2], "%Y-%m-%d")
+    # previous = datetime.timestamp(r[3], "%Y-%m-%d")
+    
+    try:
+        # SQLite may return date as string OR datetime — handle both
+        current  = r[2] if isinstance(r[2], datetime) else datetime.strptime(r[2], "%Y-%m-%d")
+        previous = r[3] if isinstance(r[3], datetime) else datetime.strptime(r[3], "%Y-%m-%d")
+        gap = (current - previous).days
+        
+        if gap < 7:
+            flags.append((r[1], r[0], r[2], r[3], gap))
+            
+    except Exception as e:
+        print(f"  ⚠ Skipped row due to date parse error: {r} → {e}")
+        continue
+
+if flags:
+    print(f"{'Vendor':<25} {'Invoice':<15} {'Date':<12} {'Prev Date':<12} {'Gap':>5}")
+    print("-" * 73)
+    for f in flags:
+        print(f"{f[0]:<25} {f[1]:<15} {f[2]:<12} {f[3]:<12} {f[4]:>5} days")
+else:
+    print("No suspicious gaps found — log this: data was clean.")
+
+conn.close()
+print("\n✓ Done. Connection closed.")
